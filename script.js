@@ -121,6 +121,10 @@ function buscarElemento(valorPesquisa) {
   tasks.forEach((item) => {
     if (valorPesquisa.toLowerCase() == item.titulo.toLowerCase()) {
       arrayBusca.push(item);
+      paragrafo.nextElementSibling.classList.add("desativo");
+    }
+    if (valorPesquisa.toLowerCase() != item.titulo.toLowerCase()) {
+      paragrafo.nextElementSibling.classList.remove("desativo");
     }
   });
 

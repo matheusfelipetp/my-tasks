@@ -21,8 +21,8 @@ body {
 
 .header {
   background: var(--bg-2);
-  width: 100%;
-  padding: 20px 0;
+  padding: 20px;
+  box-sizing: border-box;
   box-shadow: 0 3px 10px rgb(219, 219, 219);
 }
 
@@ -54,7 +54,6 @@ body {
 }
 
 .menu__search button {
-  box-sizing: border-box;
   width: 60px;
   height: 60px;
   background: var(--bg-element);
@@ -73,6 +72,8 @@ body {
   flex-direction: column;
   gap: 60px;
   margin-bottom: 40px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .task,
@@ -181,4 +182,116 @@ body {
 
 .task__list li button img {
   width: 40px;
+}
+
+@media (max-width: 1320px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: 540px;
+  }
+  .menu__search input {
+    width: 200px;
+  }
+  .header__menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .task form .form-options {
+    flex-direction: column;
+  }
+  .task,
+  .task-itens {
+    padding: 30px;
+  }
+  .task h1,
+  .task-itens h1 {
+    margin-bottom: 20px;
+  }
+  .task form .form-options {
+    gap: 20px;
+  }
+  .main {
+    margin-top: 32px;
+    gap: 32px;
+  }
+  .form-options input {
+    width: 445px;
+  }
+}
+
+@media (max-width: 590px) {
+  .container {
+    width: 380px;
+  }
+  .menu__search input {
+    height: 40px;
+    font-size: 0.8rem;
+  }
+  .menu__search button {
+    height: 40px;
+  }
+  .task h1,
+  .task-itens h1 {
+    font-size: 1.25rem;
+  }
+  .form-options input {
+    width: 288px;
+  }
+  .form-options input,
+  .form-options select {
+    height: 40px;
+    font-size: 0.8rem;
+  }
+  .task form button {
+    font-size: 0.8rem;
+    padding: 16px 0;
+  }
+  .task-itens p {
+    font-size: 1rem;
+  }
+  .task__list li button {
+    padding: 0;
+  }
+  .task__list li button img {
+    width: 20px;
+  }
+  .task__list li h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+  .form-options input {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 375px) {
+  .form-options input {
+    width: 88%;
+  }
+}
+
+@media (max-width: 300px) {
+  .form-options input {
+    width: 82%;
+  }
+  .menu__search input {
+    width: 150px;
+  }
 }
