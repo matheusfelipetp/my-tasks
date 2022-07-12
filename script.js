@@ -76,6 +76,7 @@ function organizarLista(list) {
 
 function listarElemento(list) {
   lista.innerHTML = "";
+  inputTask.value = "";
 
   list.forEach((item) => {
     const template = criarElemento(item);
