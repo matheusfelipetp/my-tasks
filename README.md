@@ -1,5 +1,5 @@
 # 📍 My Task's
-Projeto criado com o objetivo de desenvolver uma lista de tarefas, onde o usuário pode adicionar/remover o que precisa fazer no seu dia-a-dia, selecionando a prioridade das tarefas, além de ter a opção de filtrar os itens presentes na lista.
+Projeto criado com o objetivo de desenvolver uma lista de tarefas, onde o usuário pode adicionar/remover o que precisa fazer no seu dia-a-dia, selecionando a prioridade, aparecendo do mais urgente para uma tarefa mais normal, além de ter a opção de filtrar os itens presentes na lista.
 
 ## 🔨 FERRAMENTAS
 - HTML5
