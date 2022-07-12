@@ -120,12 +120,10 @@ function buscarElemento(valorPesquisa) {
   let arrayBusca = [];
 
   tasks.forEach((item) => {
-    if (valorPesquisa.toLowerCase() == item.titulo.toLowerCase()) {
+    if (
+      valorPesquisa.toLowerCase().trim() === item.titulo.toLowerCase().trim()
+    ) {
       arrayBusca.push(item);
-      paragrafo.nextElementSibling.classList.add("desativo");
-    }
-    if (valorPesquisa.toLowerCase() != item.titulo.toLowerCase()) {
-      paragrafo.nextElementSibling.classList.remove("desativo");
     }
   });
 
