@@ -44,6 +44,7 @@ function criarElemento({ titulo, tipo }) {
   const buttonImg = document.createElement("img");
 
   titleItem.innerText = titulo;
+
   if (tipo.toLowerCase() === "urgente") {
     span.style = "background: var(--urgente)";
   } else if (tipo.toLowerCase() === "prioritário") {
@@ -87,11 +88,13 @@ function listarElemento(list) {
 function habilitarBotao() {
   let content = inputTask.value;
 
-  if (content !== null && content.trim() !== "") {
+  if (content.trim() !== "") {
     btnCriarTask.disabled = false;
-  } else {
-    btnCriarTask.disabled = true;
   }
+}
+
+function desabilitarBotao() {
+  btnCriarTask.disabled = true;
 }
 
 function removerElemento(event) {
@@ -117,20 +120,25 @@ function filtrarElementos(event) {
 }
 
 function buscarElemento(valorPesquisa) {
-  let arrayBusca = [];
+  let arrayFiltro = [];
+  let pesquisa = valorPesquisa.toLowerCase().trim();
 
   tasks.forEach((item) => {
-    if (
-      valorPesquisa.toLowerCase().trim() === item.titulo.toLowerCase().trim()
-    ) {
-      arrayBusca.push(item);
+    let itemFiltro = item.titulo.toLowerCase().trim();
+
+    if (itemFiltro.includes(pesquisa)) {
+      arrayFiltro.push(item);
+    }
+    if (pesquisa === "") {
+      return tasks;
     }
   });
 
-  return arrayBusca;
+  return arrayFiltro;
 }
 
 btnCriarTask.addEventListener("click", adicionarElemento);
 inputTask.addEventListener("input", habilitarBotao);
+btnCriarTask.addEventListener("click", desabilitarBotao);
 lista.addEventListener("click", removerElemento);
-btnSearch.addEventListener("click", filtrarElementos);
+inputSearch.addEventListener("keyup", filtrarElementos);
