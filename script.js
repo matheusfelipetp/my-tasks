@@ -105,7 +105,7 @@ function removerElemento(event) {
     tasks.splice("li", 1);
   }
 
-  if (lista.innerHTML == "") {
+  if (lista.innerHTML === "") {
     paragrafo.classList.remove("desativo");
   }
 }
